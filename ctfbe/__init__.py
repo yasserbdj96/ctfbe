@@ -23,13 +23,19 @@ ctfbe("<THE_PATH_TO_THE_FILE_TO_BE_DECRYPTED>").decode(passw="<PASSWORD>",key_pa
 ##################################################################
 # CHANGELOG :
 #s
+## 1.0.2
+ - Cancel the second level of encryption to increase speed.
+
+## 1.0.1
+ - Fix bugs.
+
 ## 1.0.0
  - First public release.
 #e
 ##################################################################
 """
 # VALUES :
-__version__="1.0.0"
+__version__="1.0.2"
 __name__="ctfbe"
 __author__="Yasser Bdj (Boudjada Yasser)"
 __author_email__="yasser.bdj96@gmail.com"
@@ -155,7 +161,8 @@ class ctfbe:
 
         #save key file:
         key=ctfbe.key(self.passw)
-        exec(ashar(self.passw,key).decode())
+        get_data=ashar(self.passw,key).decode()
+        exec(f"{get_data}")
 
         #start an encrypted string:
         ctfbe.see(self.see,"# The beginning of the encryption chain:",False)
@@ -167,6 +174,9 @@ class ctfbe:
         level_1=file_final_str
         ctfbe.see(self.see,"[DONE]",False)
 
+        level_2=level_1
+
+        """
         #level_2:
         ctfbe.see(self.see,"    - Encryption level 2...")
         level_2=""
@@ -174,7 +184,8 @@ class ctfbe:
             char=list(level_1)
             level_2+=ctfbe.lower_upper(char[i])
         ctfbe.see(self.see,"[DONE]",False)
-
+        """
+        
         #level_3:
         ctfbe.see(self.see,"    - Encryption level 3...")
         level_3=level_2[::-1]
@@ -241,7 +252,8 @@ class ctfbe:
         #read key file:
         with open(key_path,'r') as file:
             data=file.read().replace('\n','')
-        exec(ashar(self.passw,data).decode())
+        get_data=ashar(self.passw,data).decode()
+        exec(f"{get_data}")
 
         code=self.file
         #start an decrypted string:
@@ -270,6 +282,9 @@ class ctfbe:
         level_3=level_3[::-1]
         ctfbe.see(self.see,"[DONE]",False)
         
+        level_2=level_3
+        
+        """
         #level_2:
         ctfbe.see(self.see,"    - Level 2 decoding...")
         level_2=""
@@ -277,6 +292,7 @@ class ctfbe:
             char=list(level_3)
             level_2+=ctfbe.lower_upper(char[i])
         ctfbe.see(self.see,"[DONE]",False)
+        """
         
         #level_1:
         ctfbe.see(self.see,"    - Level 1 decoding...")

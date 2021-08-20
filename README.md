@@ -6,7 +6,7 @@
 <h2>Installation:</h2>
 
 ```
-pip install ctfbe==1.0.0
+pip install ctfbe==1.0.2
 ```
 
 <h2>Usage:</h2>
@@ -30,6 +30,10 @@ ctfbe("<THE_PATH_TO_THE_FILE_TO_BE_DECRYPTED>").decode(passw="<PASSWORD>",key_pa
 <h2>Changelog:</h2>
 
 ```
+## 1.0.2
+ - Cancel the second level of encryption to increase speed.
+## 1.0.1
+ - Fix bugs.
 ## 1.0.0
  - First public release.
 

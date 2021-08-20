@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 setup(
     name="ctfbe",
-    version="1.0.0",
+    version="1.0.2",
     author="Yasser Bdj (Boudjada Yasser)",
     author_email="yasser.bdj96@gmail.com",
     description='''A simple project to encrypt data and files. This program encrypts any type of file, whatever its size. Nothing can be decrypted without the password.''',

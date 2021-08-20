@@ -1,2 +1,6 @@
+## 1.0.2
+ - Cancel the second level of encryption to increase speed.
+## 1.0.1
+ - Fix bugs.
 ## 1.0.0
  - First public release.
